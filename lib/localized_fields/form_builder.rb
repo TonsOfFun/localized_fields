@@ -9,7 +9,7 @@ module LocalizedFields
       text = args[0]
       if @options.has_key?(:language)
         language = @options[:language]
-        text = "#{attribute} #{language}"
+        text = "#{attribute} #{language}".titleize
         super(attribute, text, options.merge(for: "#{object_name}_#{attribute}_translations_#{language}")).html_safe
       else
         text ||= @object_name.match(/.*\[(.*)_translations\]/)[1].capitalize
