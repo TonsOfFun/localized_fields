@@ -20,11 +20,11 @@ describe 'LocalizedFields' do
       end.html_safe
 
       expected = '<dl class="field">' +
-                   '<dt><label for="post_title_translations_en">Title</label></dt>' +
+                   '<dt><label for="post_title_translations_en">Title En</label></dt>' +
                    '<dd><input id="post_title_translations_en" name="post[title_translations][en]" size="30" type="text" /></dd>' +
                  '</dl>' +
                  '<dl class="field">' +
-                   '<dt><label for="post_title_translations_pt">Title</label></dt>' +
+                   '<dt><label for="post_title_translations_pt">Title Pt</label></dt>' +
                    '<dd><input id="post_title_translations_pt" name="post[title_translations][pt]" size="30" type="text" /></dd>' +
                  '</dl>'
 
@@ -101,8 +101,8 @@ describe 'LocalizedFields' do
         localized_field.label :title
       end
 
-      expected = '<label for="post_title_translations_en">Title</label>' +
-                 '<label for="post_title_translations_pt">Title</label>'
+      expected = '<label for="post_title_translations_en">Title En</label>' +
+                 '<label for="post_title_translations_pt">Title Pt</label>'
 
       output.should eq(expected)
     end
@@ -112,8 +112,8 @@ describe 'LocalizedFields' do
         localized_field.label :title, class: 'field'
       end
 
-      expected = '<label class="field" for="post_title_translations_en">Title</label>' +
-                 '<label class="field" for="post_title_translations_pt">Title</label>'
+      expected = '<label class="field" for="post_title_translations_en">Title En</label>' +
+                 '<label class="field" for="post_title_translations_pt">Title Pt</label>'
 
       output.should eq(expected)
     end
@@ -160,7 +160,7 @@ describe 'LocalizedFields' do
       end
 
       expected =  %{<textarea cols="40" id="post_title_translations_en" name="post[title_translations][en]" rows="20">\n}
-      expected << %{</textarea>}
+      expected << %{text</textarea>}
 
       output.should eq(expected)
     end
